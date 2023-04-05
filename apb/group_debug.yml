@@ -1,0 +1,15 @@
+---
+- name: dump all
+  hosts: all
+ 
+  tasks:
+    - name: Print some debug information 
+      vars: 
+        msg: |
+          GROUP NAMES Variables ("group_names"):
+          --------------------------------
+          {{ group_names | to_nice_json }}
+      debug: 
+        msg: "{{ msg.split('\n') }}"       
+      tags: debug_info
+

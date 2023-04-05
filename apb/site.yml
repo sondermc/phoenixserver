@@ -1,0 +1,9 @@
+---
+- name: base configuration of network interfaces
+  hosts: all
+  connection: ssh
+
+  tasks:
+  - import_role:
+      name: snowflakes
+    tags: snowflakes

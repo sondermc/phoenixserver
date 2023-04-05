@@ -1,0 +1,4 @@
+---
+# tasks file for snowflakes
+- ansible.builtin.import_tasks: distribution_info.yml
+  tags: distribution_info

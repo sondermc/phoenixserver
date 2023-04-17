@@ -2,26 +2,30 @@ version: "3.9"
 services:
 
   dev:
-    image: localhost/snowflakes_baseimage:latest
-    network: snowflakes
+    image: snowflakes_baseimage:latest
+    networks: 
+      - snowflakes
     container_name: snowflake-dev
     command: [ "/usr/local/bin/entrypoint.sh" ]
 
   test:
-    image: localhost/snowflakes_baseimage:latest
-    network: snowflakes
+    image: snowflakes_baseimage:latest
+    networks: 
+      - snowflakes
     container_name: snowflake-test
     command: [ "/usr/local/bin/entrypoint.sh" ]
 
   staging:
-    image: localhost/snowflakes_baseimage:latest
-    network: snowflakes
+    image: snowflakes_baseimage:latest
+    networks: 
+      - snowflakes
     container_name: snowflake-staging
     command: [ "/usr/local/bin/entrypoint.sh" ]
 
   production:
-    image: localhost/snowflakes_baseimage:latest
-    network: snowflakes
+    image: snowflakes_baseimage:latest
+    networks: 
+      - snowflakes
     container_name: snowflake-production
     command: [ "/usr/local/bin/entrypoint.sh" ]
 

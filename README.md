@@ -13,6 +13,10 @@ For expressing in clear understanding why manual interventions on machinary is a
   - Kief Morris
 
 # Start
-  - [keypair](docs/keypair.md). Generate a keypair to make use of ssh as transport.
-  - [Emulate Snowflakes](docs/snowflakes.md). When the snowflakes are up, continue with
-  - [phoenixserver.md](docs/phoenixserver.md). When started, you can make use of arrow up/down to see example commands
+| Step | Decription | windows (docker desktop) | linux (podman) |
+|:---: | :--- | :---: | :---: |
+|1 | Generate a keypair to make use of ssh as transport | [keypair](docs/keypair-docker-windows.md) | [keypair](docs/keypair-podman-linux.md) |
+|2 | Create and start 'snowflakes' | [snowflakes](docs/snowflakes-docker-windows.md) | [snowflakes](docs/snowflakes-podman-linux.md) |
+|3 | Create and start 'phoenixserver' | [phoenixserver](docs/phoenixserver-docker-windows.md) | [phoenixserver](docs/phoenixserver-podman-linux.md) |
+
+ When started, you can make use of arrow up/down to see example commands

@@ -1,0 +1,19 @@
+FROM redhat/ubi9
+LABEL maintainer="Chris Sondermeijer <chris.sondermeijer@google.com>"
+
+ENV USER=phoenix
+ENV UID=1000
+ENV GROUP=phoenix
+ENV GID=1000
+ENV HOME=/home/${USER}
+
+RUN dnf -y update \ 
+  && dnf -y install sudo openssh-server \
+  && dnf clean all
+
+RUN useradd -ms /bin/bash ${USER}
+USER ${USER}
+
+COPY config/sudoers_snowflakes /etc/sudoers.d/snowflakes
+ADD --chmod=0755 rhel/entrypoint.sh /usr/local/bin/entrypoint.sh
+ADD --chown=${USER}:${GROUP} --chmod=0600 config/phoenix_keypair-rsa.pub ${HOME}/.ssh/authorized_keys

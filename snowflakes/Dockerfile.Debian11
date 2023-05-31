@@ -1,0 +1,24 @@
+FROM debian:stable
+LABEL maintainer="Chris Sondermeijer <chris.sondermeijer@google.com>"
+
+ENV USER=phoenix
+ENV UID=1000
+ENV GROUP=phoenix
+ENV GID=1000
+ENV HOME=/home/${USER}
+
+RUN apt-get update \
+    && apt-get install -y ca-certificates \
+    && apt-get -y dist-upgrade \
+    && apt-get install -y python sudo openssh-server \
+    && apt-get -y clean
+
+RUN useradd -ms /bin/bash -u ${GID} ${USER} 
+
+RUN mkdir -p /run/sshd && \
+  chmod 0755 /run/sshd
+COPY config/sudoers_snowflakes /etc/sudoers.d/snowflakes
+ADD --chmod=0755 debian/entrypoint.sh /usr/local/bin/entrypoint.sh
+ADD --chown=${USER}:${GROUP} --chmod=0600 config/phoenix_keypair-rsa.pub ${HOME}/.ssh/authorized_keys
+
+USER ${USER}

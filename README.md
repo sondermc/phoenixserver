@@ -15,8 +15,8 @@ For expressing in clear understanding why manual interventions on machinary is a
 # Start
 | Step | Decription | windows (docker desktop) | linux (podman) |
 |:---: | :--- | :---: | :---: |
-|1 | Generate a keypair to make use of ssh as transport | [keypair](docs/keypair-docker-windows.md) | [keypair](docs/keypair-podman-linux.md) |
-|2 | Create and start 'snowflakes' | [snowflakes](docs/snowflakes-docker-windows.md) | [snowflakes](docs/snowflakes-podman-linux.md) |
-|3 | Create and start 'phoenixserver' | [phoenixserver](docs/phoenixserver-docker-windows.md) | [phoenixserver](docs/phoenixserver-podman-linux.md) |
+|1 | Generate a keypair to make use of ssh as transport | [keypair](docs/keypair-docker-windows.md) | - |
+|2 | Create and start 'snowflakes' | [snowflakes](docs/snowflakes-docker-windows.md) | ```make debian11``` or ```make centos8```  |
+|3 | Create and start 'phoenixserver' | [phoenixserver](docs/phoenixserver-docker-windows.md) | (copy paste the alias command printed as last line of previous step) ; ```phoenixproject``` |
 
  When started, you can make use of arrow up/down to see example commands

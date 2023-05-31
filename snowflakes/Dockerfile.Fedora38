@@ -1,4 +1,4 @@
-FROM rhel7
+FROM docker.io/fedora:38
 LABEL maintainer="Chris Sondermeijer <chris.sondermeijer@google.com>"
 
 ENV USER=phoenix
@@ -7,13 +7,13 @@ ENV GROUP=phoenix
 ENV GID=1000
 ENV HOME=/home/${USER}
 
-RUN yum -y update \ 
-  && yum -y install sudo openssh-server \
-  && yum clean all
+RUN dnf -y update \ 
+  && dnf -y install sudo openssh-server \
+  && dnf clean all
 
 RUN useradd -ms /bin/bash ${USER}
 USER ${USER}
 
 COPY config/sudoers_snowflakes /etc/sudoers.d/snowflakes
-ADD --chmod=0755 centos/entrypoint.sh /usr/local/bin/entrypoint.sh
+ADD --chmod=0755 rhel/entrypoint.sh /usr/local/bin/entrypoint.sh
 ADD --chown=${USER}:${GROUP} --chmod=0600 config/phoenix_keypair-rsa.pub ${HOME}/.ssh/authorized_keys

@@ -10,7 +10,7 @@ ENV HOME=/home/${USER}
 RUN apt-get update \
     && apt-get install -y ca-certificates \
     && apt-get -y dist-upgrade \
-    && apt-get install -y python sudo openssh-server \
+    && apt-get install -y python3 sudo openssh-server \
     && apt-get -y clean
 
 RUN useradd -ms /bin/bash -u ${GID} ${USER} 

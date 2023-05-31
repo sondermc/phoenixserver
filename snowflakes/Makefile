@@ -19,8 +19,8 @@ centos8: all
 centos9: dockerfile=Dockerfile.CentOS9 
 centos9: all
 
-rhel7: dockerfile=Dockerfile.RedHat7
-rhel7: all
+fedora38: dockerfile=Dockerfile.Fedora38
+fedora38: all
 
 rhel8: dockerfile=Dockerfile.RedHat8
 rhel8: all

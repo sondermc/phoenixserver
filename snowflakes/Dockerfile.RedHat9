@@ -1,4 +1,4 @@
-FROM redhat/ubi9
+FROM docker.io/redhat/ubi9:latest
 LABEL maintainer="Chris Sondermeijer <chris.sondermeijer@google.com>"
 
 ENV USER=phoenix

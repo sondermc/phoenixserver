@@ -44,8 +44,8 @@ centos8: all
 centos9: build_target = centos9
 centos9: all
 
-rhel7: build_target = rhel7
-rhel7: all
+fedora38: build_target = fedora38
+fedora38: all
 
 rhel8: build_target = rhel8
 rhel8: all

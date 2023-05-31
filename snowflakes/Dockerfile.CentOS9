@@ -1,4 +1,4 @@
-FROM centos/centos:stream9
+FROM quay.io/centos/centos:stream9
 LABEL maintainer="Chris Sondermeijer <chris.sondermeijer@google.com>"
 
 ENV USER=phoenix
